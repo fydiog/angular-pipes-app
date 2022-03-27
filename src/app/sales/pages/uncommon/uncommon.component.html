@@ -1,0 +1,65 @@
+<div class="text-layout">
+  <h1>Uncommon Pipes</h1>
+  <p>Pipes included in Angular - CommonModule</p>
+</div>
+
+<div class="grid">
+  <div class="col md-6">
+    <p-fieldset legend="i18nSelect Pipe" [toggleable]="true">
+      <p>
+        Hi there {{ name }}, you look awesome,
+        {{ gender | i18nSelect: welcomeMap }}
+      </p>
+
+      <button
+        pButton
+        type="button"
+        label="Change"
+        (click)="changeGender()"
+      ></button>
+    </p-fieldset>
+  </div>
+  <div class="col md-6">
+    <p-fieldset legend="i18nPlural Pipe" [toggleable]="true">
+      <p>{{ clients.length | i18nPlural: clientsMap }}</p>
+      <button
+        pButton
+        type="button"
+        label="Delete"
+        (click)="deleteClients()"
+      ></button>
+    </p-fieldset>
+  </div>
+  <div class="col md-6">
+    <p-fieldset legend="Slice Pipe" [toggleable]="true">
+      <b>Original</b>
+      <pre>{{ clients }}</pre>
+      <b>| slice:1:2</b>
+      <pre>{{ clients | slice: 1:2 }}</pre>
+      <b>| slice:0:3</b>
+      <pre>{{ clients | slice: 0:3 }}</pre>
+    </p-fieldset>
+  </div>
+  <div class="col md-6">
+    <p-fieldset legend="Json Pipe" [toggleable]="true">
+      <pre>{{ heroes | json }}</pre>
+    </p-fieldset>
+  </div>
+  <div class="col md-6">
+    <p-fieldset legend="KeyValue Pipe" [toggleable]="true">
+      <ul>
+        <li *ngFor="let item of person | keyvalue">
+          <b>{{ item.key }}:</b> {{ item.value }}
+        </li>
+      </ul>
+    </p-fieldset>
+  </div>
+  <div class="col md-6">
+    <p-fieldset legend="KeyValue Pipe" [toggleable]="true">
+      <pre *ngIf="!(observable | async)">Resolving observable</pre>
+      <pre>{{ observable | async }}</pre>
+      <pre *ngIf="!(promiseVal | async)">Resolving promise</pre>
+      <pre>{{ promiseVal | async }}</pre>
+    </p-fieldset>
+  </div>
+</div>

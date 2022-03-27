@@ -1,0 +1,73 @@
+<div class="text-layout">
+  <h1>Basic Pipes</h1>
+  <p>Pipes included in Angular - CommonModule</p>
+</div>
+
+<div class="grid">
+  <div class="col-4">
+    <p-card header="lowercase" [subheader]="nameUpper">
+      <i class="block fa-solid fa-arrow-down mb-3"></i>
+      <strong> {{ nameUpper | lowercase }}</strong>
+    </p-card>
+  </div>
+  <div class="col-4">
+    <p-card header="uppercase" [subheader]="nameLower">
+      <i class="block fa-solid fa-arrow-down mb-3"></i>
+      <strong> {{ nameLower | uppercase }}</strong>
+    </p-card>
+  </div>
+  <div class="col-4">
+    <p-card header="titlecase" [subheader]="nameRandom">
+      <i class="block fa-solid fa-arrow-down mb-3"></i>
+      <strong> {{ nameUpper | titlecase }}</strong>
+    </p-card>
+  </div>
+</div>
+
+<div class="text-layout">
+  <h1>Date | Pipe</h1>
+  <p>How to manage dates with pipes</p>
+</div>
+
+<div class="grid">
+  <div class="col-6">
+    <p-card>
+      <ul>
+        <li>dateVariable:Date = new Date();</li>
+        <li>dateVariable | date</li>
+        <li>dateVariable | date: "short"</li>
+        <li>dateVariable | date: "long"</li>
+        <li>dateVariable | date: "MMMM"</li>
+        <li>dateVariable | date: "MMMM dd, yyyy"</li>
+      </ul>
+
+      <hr />
+
+      <ul>
+        <li>date | date: "long":"GMT-6"</li>
+        <li>date | date: "long":"GMT-4"</li>
+        <li>date | date: "long":"":"fr"</li>
+      </ul>
+    </p-card>
+  </div>
+  <div class="col-6">
+    <p-card>
+      <ul>
+        <li>{{ date }}</li>
+        <li>{{ date | date }}</li>
+        <li>{{ date | date: "short" }}</li>
+        <li>{{ date | date: "long" }}</li>
+        <li>{{ date | date: "MMMM" }}</li>
+        <li>{{ date | date: "MMMM dd, yyyy" }}</li>
+      </ul>
+
+      <hr />
+
+      <ul>
+        <li>{{ date | date: "long":"GMT-6" }}</li>
+        <li>{{ date | date: "long":"GMT-4" }}</li>
+        <li>{{ date | date: "long":"":"fr" }}</li>
+      </ul>
+    </p-card>
+  </div>
+</div>
